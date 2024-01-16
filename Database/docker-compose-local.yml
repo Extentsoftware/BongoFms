@@ -1,0 +1,53 @@
+version: '3.7'
+services:
+  elasticsearch:    
+    image: elasticsearch:8.7.1
+    container_name: elasticsearch
+    environment:
+        - discovery.type=single-node
+        - http.port=9200
+        - http.cors.enabled=true
+        - http.cors.allow-origin=http://localhost:1358,http://127.0.0.1:1358
+        - http.cors.allow-headers=X-Requested-With,X-Auth-Token,Content-Type,Content-Length,Authorization
+        - http.cors.allow-credentials=true
+        - bootstrap.memory_lock=true
+        - xpack.security.enabled=false
+        - xpack.security.enrollment.enabled=false
+        - CLI_JAVA_OPTS=-Xms2g -Xmx2g
+        - ELASTIC_PASSWORD=bongo
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    deploy:    
+      resources:
+          limits:
+            cpus: '2.0'
+          reservations:
+            cpus: '1.0'
+    volumes:
+      - esdata01:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+      - 9300:9300
+    networks:
+      - esnet
+
+  dejavu:
+      image: appbaseio/dejavu
+      container_name: dejavu
+      ports:
+          - '1358:1358'
+      links:
+          - elasticsearch
+      networks:
+          - esnet
+volumes:
+  esdata01:
+    driver: local
+
+networks:
+  esnet:
