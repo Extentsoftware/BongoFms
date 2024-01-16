@@ -161,7 +161,55 @@ namespace BongoApplication.Services.Elastic
                             Items = states
                         }
                     ],
-                    Locations = ["B1-S1", "B1-S2", "B2-S1A", "B2-S1B", "B2-S2", "B2-S3", "B2-S4", "B2-S5", "B2-S6", "B2-S7", "B2-S8", "Nursery", "Warehouse", "Farm"]
+                    Locations = ["B1-S1", "B1-S2", "B2-S1A", "B2-S1B", "B2-S2", "B2-S3", "B2-S4", "B2-S5", "B2-S6", "B2-S7", "B2-S8", "Nursery", "Warehouse", "Farm"],
+                    Tasks = ["Clearing", "Construction", "Fertilising", "Fireguard", "Groundwork", "Harvesting", "Irrigation - Bowser", "Irrigation", "Liming", "Maintenance", "Mowing", "Mulching", "Nursery", "Other", "Pegging", "Planting", "Pruning", "Scouting", "Security", "Slashing", "Spraying", "Stacking", "Weeding"],
+                    Materials = [
+                        new Material(Guid.NewGuid(), "AN", "Fertiliser", "Nitrate (N)", "Ammonium Nitrate"),
+                        new Material(Guid.NewGuid(), "Compound J", "Fertiliser", "Mix", ""),
+                        new Material(Guid.NewGuid(), "Cow Manure", "Fertiliser", "Mix", ""),
+                        new Material(Guid.NewGuid(), "Foliar Fert", "Fertiliser", "Mix", ""),
+                        new Material(Guid.NewGuid(), "Grow", "Fertiliser", "", ""),
+                        new Material(Guid.NewGuid(), "Husks", "Fertiliser", "", ""),
+                        new Material(Guid.NewGuid(), "Kelp-P-Max", "Fertiliser", "Mix", ""),
+                        new Material(Guid.NewGuid(), "Lime (Dolomite)", "Fertiliser", "Lime", "Soil conditioning"),
+                        new Material(Guid.NewGuid(), "MAP", "Fertiliser", "Phosphate (P)", "Mono Ammonium Phospate"),
+                        new Material(Guid.NewGuid(), "MOP", "Fertiliser", "Potasium (K)", "Murate of Potash"),
+                        new Material(Guid.NewGuid(), "SSP", "Fertiliser", "Phosphate (P)", "Super Single Phosphate"),
+                        new Material(Guid.NewGuid(), "Urea", "Fertiliser", "Nitrate (N)", ""),
+                        new Material(Guid.NewGuid(), "Omniboost", "Foliar feed", "Mix", ""),
+                        new Material(Guid.NewGuid(), "Alliete", "Fungicide", "", "Phytophthora, downy mildew, canker."),
+                        new Material(Guid.NewGuid(), "Chlorothalonil", "Fungicide", "!", "Banned in EU"),
+                        new Material(Guid.NewGuid(), "Copper oxychloride", "Fungicide", "", "Scab, Anthracnose, Anthracnose, Downy mildew, Early blight, and Late blight"),
+                        new Material(Guid.NewGuid(), "Curethane (Mancozeb)", "Fungicide", "", "broad spectrum"),
+                        new Material(Guid.NewGuid(), "Dithane M45", "Fungicide", "", "broad spectrum - Leafspots, rust, botrytis, anthracnose, early and late blights, and downy mildew."),
+                        new Material(Guid.NewGuid(), "Fosetyl", "Fungicide", "", "Phytophthora, Pythium and Plasmopara"),
+                        new Material(Guid.NewGuid(), "Metalaxyl", "Fungicide", "", "possibly ineffective - Pythium"),
+                        new Material(Guid.NewGuid(), "Gibberellic acid", "Hormone", "", "Hormone for root growth"),
+                        new Material(Guid.NewGuid(), "Seradix", "Hormone", "", "Rooting compound"),
+                        new Material(Guid.NewGuid(), "Acephate", "Insecticide", "", "aphids, leaf miners, caterpillars, sawflies, thrips,"),
+                        new Material(Guid.NewGuid(), "Acetacure", "Insecticide", "", "thrips, whiteflies and aphids"),
+                        new Material(Guid.NewGuid(), "Acol Lambda", "Insecticide", "!", "stink bug - not more often than 82 days"),
+                        new Material(Guid.NewGuid(), "Actellic Gold Dust", "Insecticide", "", "Used to treat grain before bagging"),
+                        new Material(Guid.NewGuid(), "Diazimone (Diazinon)", "Insecticide", "", "broad spectrum - Potato blight; Leaf spot; Scab; Rust"),
+                        new Material(Guid.NewGuid(), "Dichlorvos", "Insecticide", "", "indoor use mushroom flies, aphids, spider mites, caterpillars, thrips, and whiteflies"),
+                        new Material(Guid.NewGuid(), "Fencure (Fenvarelate)", "Insecticide", "", "Insecticide (toxic to bees)"),
+                        new Material(Guid.NewGuid(), "Malathion", "Insecticide", "", "mosquitoes, aphids, whiteflies, mealybugs, red spider mites and scales"),
+                        new Material(Guid.NewGuid(), "Thunder", "Insecticide", "", "use for Thrips (insect)"),
+                        new Material(Guid.NewGuid(), "Carbofuran", "Pesticide", "!", "green leafhoppers, brown plant hoppers, stem borers and whorl maggots"),
+                        new Material(Guid.NewGuid(), "Chlorpyrifos", "Pesticide", "!", "control of foliage and soil-born insects"),
+                        new Material(Guid.NewGuid(), "Glyphosate", "Weed killer", "", ""),
+                        new Material(Guid.NewGuid(), "Agriwett", "Wetter", "", "non-ionic wetter, makes spraying easier"),
+                        new Material(Guid.NewGuid(), "Alvarion ", "Fungicide", "", ""),
+                        new Material(Guid.NewGuid(), "Zinc Oxide", "Micronutrient", "", ""),
+                        new Material(Guid.NewGuid(), "Calcium Nitrate", "Fertiliser", "Nitrate (N)", ""),
+                        new Material(Guid.NewGuid(), "Carbaryl", "Pesticide", "", ""),
+                        new Material(Guid.NewGuid(), "Acomil", "Fungicide", "", ""),
+                        new Material(Guid.NewGuid(), "Boron", "Micronutrient", "", ""),
+                        new Material(Guid.NewGuid(), "Etidot-67", "Boron", "", ""),
+                        new Material(Guid.NewGuid(), "Compost ", "Fertiliser", "Mix", ""),
+                        new Material(Guid.NewGuid(), "Cyhalothrin", "Pesticide", "", ""),
+                        new Material(Guid.NewGuid(), "Bellis", "Fungicide", "", "")
+                    ]
                 };
 
                 var indexResult = client.Index(initial, x => x.Index(settingsIndexName));
@@ -188,12 +236,14 @@ namespace BongoApplication.Services.Elastic
                             Id = Guid.NewGuid(),
                             Notes = "no notes",
                             RecommendedTeamsSize = 5,
-                            SprintTaskName = "Review new sprints",
+                            SprintTaskName = "Weeding",
                             StateId = states[0].Id,
                             ActualTeamSize = 5,
                             EstimatedDays = 4,
                             Location = "B1-S1",
-                            Progress = 0,
+                            Progress = 0, 
+                            Epic="Crew A", 
+                            DateCreated = DateTime.UtcNow,
                             History = [
                             ]
                         }
