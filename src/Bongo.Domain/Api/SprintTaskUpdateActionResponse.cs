@@ -2,5 +2,6 @@
 {
     public class SprintTaskUpdateActionResponse : BaseResponse
     {
+        public int ItemsChanged { get; set; }
     }
 }

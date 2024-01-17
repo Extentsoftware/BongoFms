@@ -1,4 +1,4 @@
-﻿namespace BongoFms
+﻿namespace Bongo.Fms
 {
     public partial class App : Application
     {

@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace BongoFms
+namespace Bongo.Fms
 {
     public class Program
     {

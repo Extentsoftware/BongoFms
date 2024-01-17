@@ -2,7 +2,7 @@ using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 using System;
 
-namespace BongoFms
+namespace Bongo.Fms
 {
     internal class Program : MauiApplication
     {

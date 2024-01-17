@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bongo.Application", "Bongo.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bongo.Fms", "Bongo.Fms\Bongo.Fms.csproj", "{1BF47C63-8B2E-4992-99F1-36F7AE9F35CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bongo.Client", "Bongo.Client\Bongo.Client.csproj", "{2A8EF967-FF52-4B00-9EAA-E1B6237AA6CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{1BF47C63-8B2E-4992-99F1-36F7AE9F35CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BF47C63-8B2E-4992-99F1-36F7AE9F35CE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1BF47C63-8B2E-4992-99F1-36F7AE9F35CE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2A8EF967-FF52-4B00-9EAA-E1B6237AA6CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A8EF967-FF52-4B00-9EAA-E1B6237AA6CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A8EF967-FF52-4B00-9EAA-E1B6237AA6CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A8EF967-FF52-4B00-9EAA-E1B6237AA6CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

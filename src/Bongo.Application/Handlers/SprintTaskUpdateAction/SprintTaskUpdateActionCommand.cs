@@ -19,6 +19,7 @@ namespace Bongo.Application.Handlers.SprintTaskUpdateAction
     {
         public async Task<SprintTaskUpdateActionResponse> Handle(SprintTaskUpdateActionCommand request, CancellationToken cancellationToken)
         {
+            int itemsChanged = 0;
             foreach (var action in request.Actions)
             {
                 var getSprint = await client.GetAsync<Sprint>(action.SprintId, x => x.Index(config.SprintIndexName), cancellationToken);
@@ -59,10 +60,12 @@ namespace Bongo.Application.Handlers.SprintTaskUpdateAction
                 task.StateId = task.History[0].Data.StateId;
 
                 await client.UpdateAsync<Sprint>(action.SprintId, x => x.Index(config.SprintIndexName), cancellationToken);
+                ++itemsChanged;
             }
             return new SprintTaskUpdateActionResponse
             {
-                IsSuccess = true
+                IsSuccess = true,
+                ItemsChanged = itemsChanged
             };
         }
     }

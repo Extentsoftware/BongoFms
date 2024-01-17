@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
-    x:Class="BongoFms.AppShell"
+    x:Class="Bongo.Fms.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:BongoFms"
+    xmlns:local="clr-namespace:Bongo.Fms"
+    xmlns:views="clr-namespace:Bongo.Fms.Views"
     Shell.FlyoutBehavior="Disabled"
     Title="Bongo Fms">
 
@@ -14,5 +15,24 @@
                 ContentTemplate="{DataTemplate local:MainPage}"
                 Route="MainPage" />
         </Tab>
+        <Tab Title="Sprints" Icon="{StaticResource IconTwo}">
+            <ShellContent
+                Title="Sprints"
+                ContentTemplate="{DataTemplate views:SprintListPage}"
+                Route="SprintListPage" />
+        </Tab>
+        <Tab Title="Observations" Icon="{StaticResource IconThree}">
+            <ShellContent
+                Title="Observations"
+                ContentTemplate="{DataTemplate views:ObservationsPage}"
+                Route="SprintListPage" />
+        </Tab>
+        <Tab Title="Stock Management" Icon="{StaticResource IconFour}">
+            <ShellContent
+                Title="Observations"
+                ContentTemplate="{DataTemplate views:StockListPage}"
+                Route="SprintListPage" />
+        </Tab>
+        
     </TabBar>
 </Shell>

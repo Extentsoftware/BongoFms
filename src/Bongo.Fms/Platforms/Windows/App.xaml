@@ -1,8 +1,8 @@
 ﻿<maui:MauiWinUIApplication
-    x:Class="BongoFms.WinUI.App"
+    x:Class="Bongo.Fms.WinUI.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:maui="using:Microsoft.Maui"
-    xmlns:local="using:BongoFms.WinUI">
+    xmlns:local="using:Bongo.Fms.WinUI">
 
 </maui:MauiWinUIApplication>
