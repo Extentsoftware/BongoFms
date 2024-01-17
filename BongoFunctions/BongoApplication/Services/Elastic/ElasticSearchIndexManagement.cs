@@ -141,6 +141,7 @@ namespace BongoApplication.Services.Elastic
             SprintStateDefinition[] states = [
                 new SprintStateDefinition { Id = Guid.NewGuid(), SprintState = "Todo" },
                 new SprintStateDefinition { Id = Guid.NewGuid(), SprintState = "In Progress" },
+                new SprintStateDefinition { Id = Guid.NewGuid(), SprintState = "Blocked" },
                 new SprintStateDefinition { Id = Guid.NewGuid(), SprintState = "Quality Check" },
                 new SprintStateDefinition { Id = Guid.NewGuid(), SprintState = "Done" }
             ];
@@ -252,7 +253,11 @@ namespace BongoApplication.Services.Elastic
                 var indexResult = client.Index(initialSprint, x => x.Index(sprintIndexName));
                 if (!indexResult.IsValid)
                     throw new InvalidDataException("Failed to create initial sprint");
+                
             }
+            
+            client.Indices.Refresh();
+
         }
     }
 }

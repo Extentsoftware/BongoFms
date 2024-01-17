@@ -9,9 +9,13 @@
         public int DisplayOrder { get; set; }
     }
 
-    public class Sprint : SprintCore
+    public class SprintCoreId : SprintCore
     {
         public Guid Id { get; set; }
+    }
+
+    public class Sprint : SprintCoreId
+    {
         public SprintStateDefinition[] States { get; set; } = default!;
         public SprintTask[] Tasks { get; set; } = default!;
     }

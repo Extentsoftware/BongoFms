@@ -12,9 +12,12 @@ namespace BongoApplication.Mapping
         {
             CreateMap<SprintTaskUpdateActionCommand, SprintTaskUpdateActionRequest>().ReverseMap();
             CreateMap<GetSprintsCommand, GetSprintsRequest>().ReverseMap();
-            CreateMap<SprintTaskCore, SprintTask>()
-                .ForMember(x => x.History, x => x.Ignore())
+            CreateMap<SprintTaskCore, SprintTaskCoreId>()
                 .ForMember(x => x.Id, x => x.Ignore())
+                .ReverseMap();
+
+            CreateMap<SprintTaskCoreId, SprintTask>()
+                .ForMember(x => x.History, x => x.Ignore())
                 .ReverseMap();
 
         }

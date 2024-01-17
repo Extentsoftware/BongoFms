@@ -13,10 +13,13 @@
         public Guid StateId { get; set; }
         public DateTime DateCreated { get; set; }
     }
-
-    public class SprintTask : SprintTaskCore
+    public class SprintTaskCoreId : SprintTaskCore
     {
         public Guid Id { get; set; }
+    }
+
+    public class SprintTask : SprintTaskCoreId
+    {
 
         public SprintTaskHistory[] History { get; set; } = default!;
     }

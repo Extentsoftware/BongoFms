@@ -1,4 +1,5 @@
 using BongoApplication;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -6,26 +7,23 @@ using Microsoft.Extensions.Hosting;
 IConfiguration Configuration = default!;
 
 var host = new HostBuilder()
-    .ConfigureFunctionsWorkerDefaults()
     .ConfigureFunctionsWebApplication()
     .ConfigureAppConfiguration(cfgbuilder =>
     {
-        cfgbuilder.SetBasePath(Directory.GetCurrentDirectory())
-        .AddJsonFile("appsettings.json", true, true)
-        .AddJsonFile("appsettings.Development.json", true, true);
-        Configuration = cfgbuilder.Build();
     }
     )
     .ConfigureServices(services =>
     {
+        var cfgbuilder = new ConfigurationBuilder();
+        cfgbuilder.SetBasePath(Directory.GetCurrentDirectory())
+        .AddJsonFile("appsettings.json", false, true)
+        .AddJsonFile("appsettings.Development.json", true, true);
+        Configuration = cfgbuilder.Build();
+
         services
-                //.AddApplicationInsightsTelemetryWorkerService()
-                //.ConfigureFunctionsApplicationInsights()
                 .AddHttpClient()
                 .AddLogging(loggerBuilder =>
                 {
-                    //loggerBuilder.ClearProviders();
-                    //loggerBuilder.AddConsole();
                 })
                 .AddCustomMediator()
                 .AddAutoMapper()

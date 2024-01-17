@@ -2,6 +2,6 @@
 {
     public class GetSprintsResponse : BaseResponse
     {
-        public List<SprintCore> Sprints { get; set; } = default!;
+        public List<SprintCoreId> Sprints { get; set; } = default!;
     }
 }

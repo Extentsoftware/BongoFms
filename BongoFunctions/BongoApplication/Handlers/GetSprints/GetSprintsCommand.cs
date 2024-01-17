@@ -12,20 +12,11 @@ namespace BongoApplication.Handlers.GetSprints
         public bool IncludeClosed { get; set; } = default!;
     }
 
-    public class GetSprintsCommandHandler : IRequestHandler<GetSprintsCommand, GetSprintsResponse>
+    public class GetSprintsCommandHandler(Nest.IElasticClient client, ElasticSprintConfiguration config) : IRequestHandler<GetSprintsCommand, GetSprintsResponse>
     {
-        private readonly Nest.IElasticClient _client;
-        private readonly ElasticSprintConfiguration _config;
-
-        public GetSprintsCommandHandler(Nest.IElasticClient client, ElasticSprintConfiguration config)
-        {
-            _client = client;
-            _config = config;
-        }
-
         public async Task<GetSprintsResponse> Handle(GetSprintsCommand request, CancellationToken cancellationToken)
         {
-            var sprints = await _client.SearchAsync<SprintCore>(x => x.Index(_config.SprintIndexName).Query(x => x.MatchAll()), cancellationToken);
+            var sprints = await client.SearchAsync<SprintCoreId>(x => x.Index(config.SprintIndexName).Query(x => x.MatchAll()), cancellationToken);
 
             return new GetSprintsResponse
             {
