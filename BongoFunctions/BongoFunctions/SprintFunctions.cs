@@ -1,4 +1,5 @@
 using AutoMapper;
+using BongoApplication.Handlers.GetSettings;
 using BongoApplication.Handlers.GetSprint;
 using BongoApplication.Handlers.GetSprints;
 using BongoApplication.Handlers.SprintTaskUpdateAction;
@@ -11,17 +12,15 @@ using Newtonsoft.Json;
 
 namespace BongoFunctions
 {
-    public class SprintFunctions
+    public class SprintFunctions(
+        IMediator mediator,
+        IMapper mapper)
     {
-        private readonly IMediator _mediator;
-        private readonly IMapper _mapper;
-
-        public SprintFunctions(
-            IMediator mediator,
-            IMapper mapper)
+        [Function("Settings")]
+        public async Task<IActionResult> GetSettingsCommand([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequestData req, CancellationToken cancellationToken)
         {
-            _mediator = mediator;
-            _mapper = mapper;
+            var result = await mediator.Send(new GetSettingsCommand(), cancellationToken);
+            return new OkObjectResult(result);
         }
 
         [Function("SubmitActions")]
@@ -29,18 +28,19 @@ namespace BongoFunctions
         {
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync(cancellationToken);
             var data = JsonConvert.DeserializeObject<SprintTaskUpdateActionRequest>(requestBody);
-            var cmd = _mapper.Map<SprintTaskUpdateActionCommand>(data);
-            var result = await _mediator.Send(cmd, cancellationToken);
+            var cmd = mapper.Map<SprintTaskUpdateActionCommand>(data);
+            var result = await mediator.Send(cmd, cancellationToken);
             return new OkObjectResult(result);
         }
+        
 
         [Function("Sprints")]
         public async Task<IActionResult> GetSprints([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequestData req, CancellationToken cancellationToken)
         {
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync(cancellationToken);
             var data = JsonConvert.DeserializeObject<GetSprintsRequest>(requestBody);
-            var cmd = _mapper.Map<GetSprintsCommand>(data ?? new GetSprintsRequest());
-            var result = await _mediator.Send(cmd, cancellationToken);
+            var cmd = mapper.Map<GetSprintsCommand>(data ?? new GetSprintsRequest());
+            var result = await mediator.Send(cmd, cancellationToken);
             return new OkObjectResult(result);
         }
 
@@ -61,7 +61,7 @@ namespace BongoFunctions
             {
                 SprintId = id
             };
-            var result = await _mediator.Send(cmd, cancellationToken);
+            var result = await mediator.Send(cmd, cancellationToken);
             return new OkObjectResult(result);
         }
 
@@ -72,8 +72,8 @@ namespace BongoFunctions
         {
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync(cancellationToken);
             var data = JsonConvert.DeserializeObject<CreateSprintRequest>(requestBody);
-            var cmd = _mapper.Map<GetSprintsCommand>(data ?? new CreateSprintRequest());
-            var result = await _mediator.Send(cmd, cancellationToken);
+            var cmd = mapper.Map<GetSprintsCommand>(data ?? new CreateSprintRequest());
+            var result = await mediator.Send(cmd, cancellationToken);
             return new OkObjectResult(result);
         }
     }

@@ -12,7 +12,9 @@
     {
         public Guid SprintId { get; set; }
         public Guid SprintTaskId { get; set; }
+        
+        // either set StateId OR Data. If both are set then Data is taken
+        public Guid StateId { get; set; }
         public SprintTaskCore Data { get; set; } = default!;
     }
-
 }

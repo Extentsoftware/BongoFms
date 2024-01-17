@@ -2,6 +2,7 @@
 using BongoDomain;
 using BongoDomain.Api;
 using MediatR;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace BongoApplication.Handlers.SprintTaskUpdateAction
 {
@@ -39,9 +40,16 @@ namespace BongoApplication.Handlers.SprintTaskUpdateAction
                     };
                 }
 
+                SprintTaskCore? update = action.Data;
+                if (update == null)
+                {
+                    update = task;
+                    update.StateId = action.StateId;
+                }
+                
                 SprintTaskHistory sprintTaskHistory = new()
                 {
-                    Data = action.Data,
+                    Data = update,
                     DateCreated = request.SubmissionTime,
                     User = request.User,
                 };
