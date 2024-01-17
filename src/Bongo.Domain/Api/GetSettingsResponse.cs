@@ -1,4 +1,6 @@
-﻿namespace BongoDomain.Api
+﻿using Bongo.Domain.Models;
+
+namespace Bongo.Domain.Api
 {
     public class GetSettingsResponse : BaseResponse
     {

@@ -1,11 +1,12 @@
-﻿using BongoDomain;
+﻿using Bongo.Domain;
+using Bongo.Domain.Models;
 using Microsoft.Extensions.Logging;
 using Nest;
 using Polly;
 using Polly.Retry;
 using Policy = Polly.Policy;
 
-namespace BongoApplication.Services.Elastic
+namespace Bongo.Application.Services.Elastic
 {
     public class ElasticSearchIndexManagement(ILogger<ElasticSearchIndexManagement> logger) : IElasticSearchIndexManagement
     {

@@ -1,9 +1,10 @@
-﻿using BongoApplication.Services.Elastic;
-using BongoDomain;
-using BongoDomain.Api;
+﻿using Bongo.Application.Services.Elastic;
+using Bongo.Domain;
+using Bongo.Domain.Api;
+using Bongo.Domain.Models;
 using MediatR;
 
-namespace BongoApplication.Handlers.CreateSprint
+namespace Bongo.Application.Handlers.CreateSprint
 {
     public class CreateSprintCommandHandler(Nest.IElasticClient client, ElasticSprintConfiguration config) : IRequestHandler<CreateSprintCommand, CreateSprintResponse>
     {

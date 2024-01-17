@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "BongoFunctions": {
+    "Bongo.Functions": {
       "commandName": "Project",
       "commandLineArgs": "--port 7020"
     },

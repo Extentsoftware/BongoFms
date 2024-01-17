@@ -1,4 +1,4 @@
-﻿namespace BongoDomain
+﻿namespace Bongo.Domain.Models
 {
     public class User
     {

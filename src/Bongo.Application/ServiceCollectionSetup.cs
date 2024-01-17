@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
-using BongoApplication.Handlers.SprintTaskUpdateAction;
-using BongoApplication.Mapping;
-using BongoApplication.Services.Elastic;
+using Bongo.Application.Handlers.SprintTaskUpdateAction;
+using Bongo.Application.Mapping;
+using Bongo.Application.Services.Elastic;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Nest;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
-namespace BongoApplication
+namespace Bongo.Application
 {
     public static class ServiceCollectionSetup
     {

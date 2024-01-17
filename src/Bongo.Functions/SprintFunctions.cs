@@ -1,16 +1,16 @@
 using AutoMapper;
-using BongoApplication.Handlers.GetSettings;
-using BongoApplication.Handlers.GetSprint;
-using BongoApplication.Handlers.GetSprints;
-using BongoApplication.Handlers.SprintTaskUpdateAction;
-using BongoDomain.Api;
+using Bongo.Application.Handlers.GetSettings;
+using Bongo.Application.Handlers.GetSprint;
+using Bongo.Application.Handlers.GetSprints;
+using Bongo.Application.Handlers.SprintTaskUpdateAction;
+using Bongo.Domain.Api;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Newtonsoft.Json;
 
-namespace BongoFunctions
+namespace Bongo.Functions
 {
     public class SprintFunctions(
         IMediator mediator,

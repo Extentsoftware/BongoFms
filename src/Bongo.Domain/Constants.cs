@@ -1,4 +1,4 @@
-﻿namespace BongoDomain
+﻿namespace Bongo.Domain
 {
     public static class Constants
     {

@@ -1,4 +1,4 @@
-﻿namespace BongoDomain.Api
+﻿namespace Bongo.Domain.Api
 {
     public class CreateSprintRequest
     {

@@ -1,4 +1,4 @@
-﻿namespace BongoApplication.Services.Elastic
+﻿namespace Bongo.Application.Services.Elastic
 {
     public class ElasticClientResponseException : Exception
     {

@@ -1,10 +1,11 @@
-﻿using BongoApplication.Services.Elastic;
-using BongoDomain;
-using BongoDomain.Api;
+﻿using Bongo.Application.Services.Elastic;
+using Bongo.Domain;
+using Bongo.Domain.Api;
+using Bongo.Domain.Models;
 using MediatR;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace BongoApplication.Handlers.SprintTaskUpdateAction
+namespace Bongo.Application.Handlers.SprintTaskUpdateAction
 {
     public class SprintTaskUpdateActionCommand : IRequest<SprintTaskUpdateActionResponse>
     {

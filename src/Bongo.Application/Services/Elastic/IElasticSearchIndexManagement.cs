@@ -1,6 +1,6 @@
 ﻿using Nest;
 
-namespace BongoApplication.Services.Elastic
+namespace Bongo.Application.Services.Elastic
 {
     public interface IElasticSearchIndexManagement
     {

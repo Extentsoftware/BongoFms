@@ -1,7 +1,8 @@
-﻿using BongoDomain;
+﻿using Bongo.Domain;
+using Bongo.Domain.Models;
 using Nest;
 
-namespace BongoApplication.Services.Elastic
+namespace Bongo.Application.Services.Elastic
 {
     public static class ElasticSearchClientFactory
     {

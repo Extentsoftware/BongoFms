@@ -1,4 +1,4 @@
-using BongoApplication;
+using Bongo.Application;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

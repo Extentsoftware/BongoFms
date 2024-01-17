@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
-using BongoApplication.Handlers.GetSprints;
-using BongoApplication.Handlers.SprintTaskUpdateAction;
-using BongoDomain;
-using BongoDomain.Api;
+using Bongo.Application.Handlers.GetSprints;
+using Bongo.Application.Handlers.SprintTaskUpdateAction;
+using Bongo.Domain;
+using Bongo.Domain.Api;
+using Bongo.Domain.Models;
 
-namespace BongoApplication.Mapping
+namespace Bongo.Application.Mapping
 {
     public class AutoMapperProfile : Profile
     {
