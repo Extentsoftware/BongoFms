@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Bongo.Client;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using Microsoft.Maui.Controls;
 
 namespace Bongo.Fms
 {
@@ -16,8 +19,11 @@ namespace Bongo.Fms
                     fonts.AddFont("fa_solid.ttf", "FontAwesome");
                 });
 
+            var baseUrl = Preferences.Get("ApiUrl", "http://localhost:8070");
+            builder.Services.AddBongoApiService(baseUrl);
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
