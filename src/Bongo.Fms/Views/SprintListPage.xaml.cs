@@ -1,21 +1,34 @@
-using Bongo.Client;
 using Bongo.Domain.Models;
+using Bongo.Fms.Services;
 using System.Collections.ObjectModel;
 
 namespace Bongo.Fms.Views;
 
 public partial class SprintListPage : ContentPage
 {
-    private IBongoApiService _bongoApiService;
+    private ICachedDataService _cachedDataService;
 
-    public ObservableCollection<Sprint> Items { get; set; } = [];
+    public ObservableCollection<SprintCoreId> Items { get; set; } = new();
 
-    public SprintListPage(IBongoApiService bongoApiService)
+    public SprintListPage(ICachedDataService cachedDataService)
 	{
-		InitializeComponent();
-
-        _bongoApiService = bongoApiService;
+        InitializeComponent();
+        BindingContext = this;
+        _cachedDataService = cachedDataService;
         Connectivity.Current.ConnectivityChanged += Current_ConnectivityChanged;
+    } 
+    
+
+    protected override async void OnNavigatedTo(NavigatedToEventArgs args)
+    {
+        base.OnNavigatedTo(args);
+        var sprints = await _cachedDataService.GetSprintsAsync(default);
+        MainThread.BeginInvokeOnMainThread(() =>
+        {
+            Items.Clear();
+            foreach (var sprint in sprints)
+                Items.Add(sprint);
+        });
     }
 
     private void Current_ConnectivityChanged(object? sender, ConnectivityChangedEventArgs e)

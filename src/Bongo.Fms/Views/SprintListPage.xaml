@@ -11,7 +11,7 @@
                   SelectionMode="Single"
                   SelectionChanged="CollectionView_SelectionChanged">
             <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="models:Sprint">
+                <DataTemplate x:DataType="models:SprintCoreId">
                     <Grid ColumnDefinitions="*, Auto" Padding="20">
                         <Label Text="{Binding  SprintName}"
                                    VerticalTextAlignment="Center"/>

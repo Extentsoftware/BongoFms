@@ -68,10 +68,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Services\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <ProjectReference Include="..\Bongo.Client\Bongo.Client.csproj" />
 	  <ProjectReference Include="..\Bongo.Domain\Bongo.Domain.csproj" />
 	</ItemGroup>

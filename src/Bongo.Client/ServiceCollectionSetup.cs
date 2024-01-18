@@ -20,7 +20,11 @@ namespace Bongo.Client
         public static IServiceCollection AddBongoApiService(this IServiceCollection services, string baseUrl)
         {
             services.AddHttpClient();
-            services.AddTransient((Func<IServiceProvider, IBongoApiService>)((IServiceProvider x) => new BongoApiService(baseUrl)));
+            
+            services.AddTransient<IBongoApiService>(x =>
+            {
+                return new BongoApiService(baseUrl);
+            });
             return services;
         }
     }

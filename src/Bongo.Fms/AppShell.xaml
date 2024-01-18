@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <Shell
     x:Class="Bongo.Fms.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -7,8 +6,7 @@
     xmlns:views="clr-namespace:Bongo.Fms.Views"
     Shell.FlyoutBehavior="Disabled"
     Title="Bongo Fms">
-
-    <TabBar>
+<TabBar>
         <Tab Title="Home" Icon="{StaticResource IconOne}">
             <ShellContent
                 Title="Home"
