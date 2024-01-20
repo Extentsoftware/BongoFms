@@ -31,6 +31,12 @@
                 ContentTemplate="{DataTemplate views:StockListPage}"
                 Route="SprintListPage" />
         </Tab>
-        
+        <Tab Title="Stock Management" Icon="{StaticResource IconFour}">
+            <ShellContent
+                Title="Observations"
+                ContentTemplate="{DataTemplate views:StockListPage}"
+                Route="SprintListPage" />
+        </Tab>
+
     </TabBar>
 </Shell>
