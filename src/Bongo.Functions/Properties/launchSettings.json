@@ -7,6 +7,12 @@
     "WSL": {
       "commandName": "WSL2",
       "distributionName": ""
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "httpPort": 33456,
+      "useSSL": false
     }
   }
 }
