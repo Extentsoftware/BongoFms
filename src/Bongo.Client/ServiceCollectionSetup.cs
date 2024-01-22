@@ -6,24 +6,17 @@ namespace Bongo.Client
     public class BongoApiConfiguration
     {
         public string BaseUrl { get; set; } = default!;
+        public string ApiKeySecret { get; set; } = default!;
     }
     public static class ServiceCollectionSetup
     {
-        public static IServiceCollection AddBongoApiService(this IServiceCollection services, IConfiguration configuration)
-        {
-            BongoApiConfiguration serviceConfiguration = new();
-            configuration.GetSection(nameof(BongoApiConfiguration)).Bind(serviceConfiguration);
-            services.AddSingleton(serviceConfiguration);
-            return services.AddBongoApiService(serviceConfiguration.BaseUrl);
-        }
-
-        public static IServiceCollection AddBongoApiService(this IServiceCollection services, string baseUrl)
+        public static IServiceCollection AddBongoApiService(this IServiceCollection services, string baseUrl, string apiKey)
         {
             services.AddHttpClient();
             
             services.AddTransient<IBongoApiService>(x =>
             {
-                return new BongoApiService(baseUrl);
+                return new BongoApiService(baseUrl, apiKey);
             });
             return services;
         }

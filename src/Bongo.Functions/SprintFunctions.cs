@@ -16,6 +16,12 @@ namespace Bongo.Functions
         IMediator mediator,
         IMapper mapper)
     {
+        [Function("healthcheck")]
+        public async Task<IActionResult> HealthCheck([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequestData req, CancellationToken cancellationToken)
+        {
+            return new OkObjectResult("Ok");
+        }
+
         [Function("Settings")]
         public async Task<IActionResult> GetSettingsCommand([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequestData req, CancellationToken cancellationToken)
         {

@@ -27,15 +27,15 @@
         </Tab>
         <Tab Title="Stock Management" Icon="{StaticResource IconFour}">
             <ShellContent
-                Title="Observations"
+                Title="Stock Management"
                 ContentTemplate="{DataTemplate views:StockListPage}"
                 Route="SprintListPage" />
         </Tab>
         <Tab Title="Stock Management" Icon="{StaticResource IconFour}">
             <ShellContent
-                Title="Observations"
+                Title="Purchasing"
                 ContentTemplate="{DataTemplate views:StockListPage}"
-                Route="SprintListPage" />
+                Route="PurchasingPage" />
         </Tab>
 
     </TabBar>
