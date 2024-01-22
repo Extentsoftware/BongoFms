@@ -1,8 +1,7 @@
 {
     "IsEncrypted": false,
     "Values": {
-        "AzureWebJobsStorageOld": "UseDevelopmentStorage=true",
-        "AzureWebJobsStorage":"DefaultEndpointsProtocol=https;AccountName=bongofunctionsstorage;AccountKey=2m0DbzYR07MMOwudV0oFdaoxGPaA9DjThshbsusB/mv8emVx/Cq/iyDjfMXT0eys4SZSRVljQbUx+ASt3IY8WA==;EndpointSuffix=core.windows.net",
+        "AzureWebJobsStorage": "UseDevelopmentStorage=true",
         "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated"
     }
 }
