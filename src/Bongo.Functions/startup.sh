@@ -3,7 +3,7 @@
 __start_indexing() {
 	echo "*** Key is : ${apiFunctionKey} ***"
 	sed -i -e 's/apiFunctionsKey/'"$apiFunctionKey"'/g' /etc/secrets/host.json
-	dotnet Bongo.Functions.dll
+	dotnet /azure-functions-host/Microsoft.Azure.WebJobs.Script.WebHost.dll
 }
 
 __main() {
