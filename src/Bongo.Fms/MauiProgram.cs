@@ -19,7 +19,7 @@ namespace Bongo.Fms
                     fonts.AddFont("fa_solid.ttf", "FontAwesome");
                 });
 
-            string defaultApiKey = Environment.GetEnvironmentVariable("bfms_apikey") ?? "";
+            string defaultApiKey = Environment.GetEnvironmentVariable("bfms_apikey") ?? "somekey";
             string defaultbBaseUrl = Environment.GetEnvironmentVariable("bfms_baseurl") ?? "http://localhost:7020";
 
             var baseUrl = Preferences.Get("ApiUrl", defaultbBaseUrl);

@@ -15,9 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bongo.Client", "Bongo.Clien
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E6D00BA9-454C-4C59-A371-3F3B6524565F}"
 	ProjectSection(SolutionItems) = preProject
-		readme.txt = readme.txt
 		..\docker-compose.yml = ..\docker-compose.yml
-		Bongo.Functions\Properties\PublishProfiles\registry.hub.docker.com_gluteusmaximus.pubxml = Bongo.Functions\Properties\PublishProfiles\registry.hub.docker.com_gluteusmaximus.pubxml
+		readme.txt = readme.txt
 	EndProjectSection
 EndProject
 Global

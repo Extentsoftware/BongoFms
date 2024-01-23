@@ -28,7 +28,7 @@ ENV AzureWebJobsScriptRoot=/home/site/wwwroot \
 RUN mkdir /etc/secrets/
 ENV FUNCTIONS_SECRETS_PATH=/etc/secrets
 ENV AzureWebJobsSecretStorageType=Files
-ENV apiFunctionKey somekey
+ENV apiFunctionKey ${apiFunctionKey:-somekey}
 ADD Bongo.Functions/host_secrets.json /etc/secrets/host.json
 ADD Bongo.Functions/startup.sh startup.sh
 RUN sed -i -e 's/\r$//' startup.sh
