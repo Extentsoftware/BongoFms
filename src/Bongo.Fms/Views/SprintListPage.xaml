@@ -12,13 +12,15 @@
                   SelectionChanged="CollectionView_SelectionChanged">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:SprintCoreId">
-                    <Grid ColumnDefinitions="*, Auto" Padding="20">
-                        <Label Text="{Binding  SprintName}"
-                                   VerticalTextAlignment="Center"/>
-                        <Label Text="✔️"
-                                   Grid.Column="1"
-                                   VerticalTextAlignment="Center"
-                                   IsVisible="{Binding  DateCreated}"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="50" />
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Clicked="Button_Clicked" Text="select"></Button>
+                        <Label Grid.Column="1" Text="{Binding  SprintName}"  VerticalTextAlignment="Center" />
+                        <Label Grid.Column="2" Text="✔️" VerticalTextAlignment="Center" IsVisible="{Binding  DateCreated}"/>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

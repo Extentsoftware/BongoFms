@@ -20,7 +20,7 @@ namespace Bongo.Fms
                 });
 
             string defaultApiKey = Environment.GetEnvironmentVariable("bfms_apikey") ?? "somekey";
-            string defaultbBaseUrl = Environment.GetEnvironmentVariable("bfms_baseurl") ?? "http://localhost:7020";
+            string defaultbBaseUrl = Environment.GetEnvironmentVariable("bfms_baseurl") ?? "http://iot.vestrong.eu:8080";
 
             var baseUrl = Preferences.Get("ApiUrl", defaultbBaseUrl);
             string apiKey = Preferences.Get("ApiKey", defaultApiKey);

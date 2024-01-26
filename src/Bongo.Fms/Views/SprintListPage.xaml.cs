@@ -44,4 +44,9 @@ public partial class SprintListPage : ContentPage
     {
         SemanticScreenReader.Announce("Add new sprint");
     }
+
+    private void Button_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }

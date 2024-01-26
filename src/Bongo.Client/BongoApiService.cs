@@ -16,5 +16,17 @@ namespace Bongo.Client
         => $"{baseUrl}/api/sprint/{id}"
             .WithHeader(FunctionsKey, apiKey)
             .GetJsonAsync<GetSprintResponse>(cancellationToken);
+
+        public Task<SprintTaskUpdateActionResponse> SubmitActionsAsync(SprintTaskUpdateActionRequest request, CancellationToken cancellationToken)
+        => $"{baseUrl}/api/submitactions"
+                .WithHeader(FunctionsKey, apiKey)
+                .PostJsonAsync(request, cancellationToken)
+                .ReceiveJson<SprintTaskUpdateActionResponse>();
+
+        public Task<CreateSprintResponse> CreateSprint(CreateSprintRequest request, CancellationToken cancellationToken)
+        => $"{baseUrl}/api/sprint"
+                .WithHeader(FunctionsKey, apiKey)
+                .PostJsonAsync(request, cancellationToken)
+                .ReceiveJson<CreateSprintResponse>();
     }
 }
