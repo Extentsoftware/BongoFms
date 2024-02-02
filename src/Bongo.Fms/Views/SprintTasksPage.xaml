@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bongo.Fms.Views.SprintTasksPage"
+             xmlns:models="clr-namespace:Bongo.Domain.Models;assembly=Bongo.Domain"
+             Title="Sprint Tasks">
+    <Grid RowDefinitions="*,Auto">
+        <CollectionView 
+                  VerticalOptions="Fill"
+                  ItemsSource="{Binding Items}"
+                  SelectionMode="Single"
+                  SelectionChanged="CollectionView_SelectionChanged">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:SprintCoreId">
+                    <Grid ColumnSpacing="5" RowSpacing="5" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"  />
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Text="{Binding SprintName}"  VerticalTextAlignment="Center" BackgroundColor="LightGray" Padding="5" />
+                        <Label Grid.Column="1" Text="{Binding DateCreated}" VerticalTextAlignment="Center" BackgroundColor="LightGray"  Padding="5"/>
+                        <Button Grid.Column="2" Clicked="Button_Clicked" Text="Open"  Padding="5"></Button>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Grid.Row="1" Text="Add New Item" Clicked="OnItemAdded"
+                Margin="20"/>
+    </Grid>
+</ContentPage>

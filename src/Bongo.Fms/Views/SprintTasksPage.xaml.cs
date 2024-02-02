@@ -4,13 +4,13 @@ using System.Collections.ObjectModel;
 
 namespace Bongo.Fms.Views;
 
-public partial class SprintListPage : ContentPage
+public partial class SprintTasksPage : ContentPage
 {
     private ICachedDataService _cachedDataService;
 
     public ObservableCollection<SprintCoreId> Items { get; set; } = new();
 
-    public SprintListPage(ICachedDataService cachedDataService)
+    public SprintTasksPage(ICachedDataService cachedDataService)
 	{
         InitializeComponent();
         BindingContext = this;
@@ -47,8 +47,6 @@ public partial class SprintListPage : ContentPage
 
     private void Button_Clicked(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync("/sprints/tasks");
-        //var page = App.Services.GetService<SprintTasksPage>();
-        //Navigation.PushAsync(page);
+
     }
 }

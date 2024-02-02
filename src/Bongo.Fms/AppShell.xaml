@@ -17,25 +17,25 @@
             <ShellContent
                 Title="Sprints"
                 ContentTemplate="{DataTemplate views:SprintListPage}"
-                Route="SprintListPage" />
+                Route="sprints" />
         </Tab>
         <Tab Title="Observations" Icon="{StaticResource IconThree}">
             <ShellContent
                 Title="Observations"
                 ContentTemplate="{DataTemplate views:ObservationsPage}"
-                Route="SprintListPage" />
+                Route="observations" />
         </Tab>
         <Tab Title="Stock Management" Icon="{StaticResource IconFour}">
             <ShellContent
                 Title="Stock Management"
                 ContentTemplate="{DataTemplate views:StockListPage}"
-                Route="SprintListPage" />
+                Route="stocks" />
         </Tab>
         <Tab Title="Stock Management" Icon="{StaticResource IconFour}">
             <ShellContent
                 Title="Purchasing"
                 ContentTemplate="{DataTemplate views:StockListPage}"
-                Route="PurchasingPage" />
+                Route="purchasing" />
         </Tab>
 
     </TabBar>

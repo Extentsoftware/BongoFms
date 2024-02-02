@@ -31,7 +31,9 @@ namespace Bongo.Fms
             builder.Services.AddTransient<SprintListPage>();
             builder.Services.AddTransient<ObservationsPage>();
             builder.Services.AddTransient<MainPage>();
+            builder.Services.AddTransient<SprintTasksPage>();
 
+            Routing.RegisterRoute("sprint/tasks", typeof(SprintTasksPage));
 
 #if DEBUG
             builder.Logging.AddDebug();

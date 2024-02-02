@@ -229,7 +229,8 @@ namespace Bongo.Application.Services.Elastic
                     Id = Guid.NewGuid(),
                     DateCreated = DateTime.UtcNow,
                     DateStarted = DateTime.UtcNow,
-                    SprintName = "First sprint",
+                    SprintName = "Farm Sprint for W/C 1 April 2024",  
+                    DateEnded = null,
                     DisplayOrder = 0,
                     States = states,
                     Tasks = [
