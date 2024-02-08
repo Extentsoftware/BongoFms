@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Bongo.Fms.Views.SprintListPage"
              xmlns:models="clr-namespace:Bongo.Domain.Models;assembly=Bongo.Domain"
+             xmlns:viewmodel="clr-namespace:Bongo.Fms.ViewModel"
              Title="Sprints">
     <Grid RowDefinitions="*,Auto">
         <CollectionView 
@@ -15,9 +16,9 @@
                     <SwipeView>
                         <SwipeView.RightItems>
                             <SwipeItems>
-                                <SwipeItem Text="Delete"
+                                <SwipeItem Text="Select"
                                            BackgroundColor="Red"
-                                           Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:SprintListViewModel}}, Path=DeleteCommand}"
+                                           Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:SprintListViewModel}}, Path=TapCommand}"
                                            CommandParameter="{Binding .}"/>
                             </SwipeItems>
                         </SwipeView.RightItems>

@@ -6,19 +6,6 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace Bongo.Fms.ViewModel
 {
-    [QueryProperty("Text", "Text")]
-    public partial class DetailViewModel : ObservableObject
-    {
-        [ObservableProperty]
-        string text;
-
-        [RelayCommand]
-        async Task GoBack()
-        {
-            await Shell.Current.GoToAsync("..");
-        }
-    }
-
     public partial class SprintListViewModel : ObservableObject
     {
         IConnectivity connectivity;
@@ -31,25 +18,6 @@ namespace Bongo.Fms.ViewModel
         [ObservableProperty]
         ObservableCollection<SprintCoreId> items;
 
-        [ObservableProperty]
-        string text;
-
-        [RelayCommand]
-        async Task Add()
-        {
-            if (string.IsNullOrWhiteSpace(Text))
-                return;
-
-            if (connectivity.NetworkAccess != NetworkAccess.Internet)
-            {
-                await Shell.Current.DisplayAlert("Uh Oh!", "No Internet", "OK");
-                return;
-            }
-
-            // Items.Add(Text);
-            // add our item
-            Text = string.Empty;
-        }
 
         [RelayCommand]
         void Delete(SprintCoreId s)
@@ -63,7 +31,7 @@ namespace Bongo.Fms.ViewModel
         [RelayCommand]
         async Task Tap(SprintCoreId s)
         {
-            await Shell.Current.GoToAsync($"{nameof(SprintTasksPage)}?Text={s}");
+            await Shell.Current.GoToAsync($"{nameof(SprintTasksPage)}?Id={s.Id}");
         }
 
     }

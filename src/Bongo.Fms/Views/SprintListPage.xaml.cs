@@ -1,5 +1,6 @@
 using Bongo.Domain.Models;
 using Bongo.Fms.Services;
+using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
 
 namespace Bongo.Fms.Views;
@@ -45,10 +46,14 @@ public partial class SprintListPage : ContentPage
         SemanticScreenReader.Announce("Add new sprint");
     }
 
+    [RelayCommand]
+    async Task Tap(string s)
+    {
+        await Shell.Current.GoToAsync($"{nameof(SprintTasksPage)}?sprint={s}");
+    }
+
     private void Button_Clicked(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync("/sprints/tasks");
-        //var page = App.Services.GetService<SprintTasksPage>();
-        //Navigation.PushAsync(page);
+
     }
 }
